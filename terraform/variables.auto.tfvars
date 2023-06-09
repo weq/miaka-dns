@@ -1,4 +1,5 @@
 location = "norwayeast"
+environment = "prod"
 tags = {
     ProvisionedBy = "Terraform"
     Environment = "Production"

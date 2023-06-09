@@ -25,6 +25,12 @@ variable "location" {
   default = "location"
 }
 
+variable "environment" {
+  description = "What type of environment are we deploying?"
+  type = string
+  default = "dev"
+}
+
 variable "tags" {
   description = "A default set of tags for Azure resources."
   type = map(string)
