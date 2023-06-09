@@ -1,4 +1,4 @@
-name: 'Build and Deploy'
+name: 'Deploy'
 
 on:
   push:
@@ -36,10 +36,10 @@ jobs:
         working-directory: ./terraform
       - name: Terraform Plan
         run: |
-          terraform plan -out backstage.tfplan -input=false \
+          terraform plan -out miaka_dns.tfplan -input=false \
             -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
         working-directory: ./terraform
       - name: Terraform Apply
         run: |
-          terraform apply -auto-approve -input=false backstage.tfplan
+          terraform apply -auto-approve -input=false miaka_dns.tfplan
         working-directory: ./terraform
