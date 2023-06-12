@@ -57,11 +57,3 @@ resource "azurerm_dns_zone" "staging_miaka_info" {
   resource_group_name = azurerm_resource_group.dns.name
   tags = var.tags
 }
-
-resource "azurerm_dns_cname_record" "vg_dev" {
-    name = "vg"
-    zone_name = azurerm_dns_zone.dev_miaka_info.name
-    resource_group_name = azurerm_resource_group.dns.name
-    ttl = 300
-    record = "vg.no"
-}
